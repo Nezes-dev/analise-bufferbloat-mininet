@@ -35,6 +35,3 @@ python3 gerar_graficos.py
 python3 comparativo_red_fifo.py
 
 
-
-Desenvolvido por Nicollas e Kêmilly.
-
