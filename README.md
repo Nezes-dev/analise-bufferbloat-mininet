@@ -25,3 +25,17 @@ O experimento foi desenhado com rigor estatístico:
 **1. Emulação da Fila FIFO (Drop-Tail):**
 ```bash
 sudo python3 experimento.py
+
+2. Emulação da Fila Inteligente (RED):
+sudo python3 experimento_red.py
+
+3. Geração das Estatísticas e Gráficos
+python3 analise.py
+python3 gerar_graficos.py
+python3 comparativo_red_fifo.py
+
+📈 Conclusões Principais
+O uso de filas longas sem gerenciamento ativo (FIFO) causa um aumento catastrófico na latência sob alta carga. A implementação do algoritmo RED mitigou o problema com sucesso, descartando pacotes preventivamente e mantendo o Jitter e o RTT em níveis ideais para aplicações de tempo real, reduzindo a latência de picos de ~4300ms para ~38ms no cenário de estresse máximo.
+
+Desenvolvido por Nicollas e Kêmilly.
+
