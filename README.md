@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <em>Análise quantitativa do impacto do tamanho de filas na latência e vazão TCP, comparando políticas FIFO (Drop-Tail) e RED (Active Queue Management). Projeto acadêmico para a disciplina de Redes de Computadores - UFC Quixadá.</em>
+  <em>Análise quantitativa do impacto do tamanho de filas na latência e vazão TCP, comparando políticas FIFO (Drop-Tail) e RED (Active Queue Management). Projeto acadêmico para a disciplina de Analise de Desempenho de Redes de Computadores - UFC Quixadá.</em>
 </p>
 
 <hr>
@@ -43,6 +43,77 @@ O **Bufferbloat** é um fenômeno caracterizado por latências e jitter excessiv
  ┣ 📜 comparativo_red_fifo.py      # Script de confronto direto entre as filas
  ┣ 📜 plotar_cwnd.py               # Extração da Dinâmica da Janela TCP
  ┣ 📜 Relatorio_Final.pdf          # Artigo técnico completo com a fundamentação
- ┗ 📂 resultados/                  # Arquivos .txt, .json e .csv gerados pelas 480 execuçõe
+ ┗ 📂 resultados/                  # Arquivos .txt, .json e .csv gerados pelas 960 execuções
 
+```
 
+---
+
+## ⚙️ Metodologia Estatística
+
+O experimento foi desenhado com rigor para evitar anomalias de emulação:
+
+* **Fatores:** Tamanho do Buffer (10, 100, 500, 1000 pacotes) vs Carga (0, 1, 5, 10 fluxos TCP).
+* **Execuções:** 30 rodadas independentes de 60 segundos por cenário (total de 480 emulações por fila, 960 no total geral).
+* **Confiabilidade:** Margem de erro calculada utilizando **Intervalo de Confiança (IC) de 95%** com distribuição T-Student.
+
+---
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+Certifique-se de estar rodando um ambiente Linux (Ubuntu recomendado) e instale as dependências:
+
+```bash
+sudo apt update
+sudo apt install mininet iperf3 -y
+pip install matplotlib numpy scipy
+
+```
+
+### 1. Iniciar a Emulação
+
+Para rodar os testes da fila tradicional (FIFO):
+
+```bash
+sudo python3 experimento.py
+
+```
+
+Para rodar os testes com o gerenciamento ativo (RED):
+
+```bash
+sudo python3 experimento_red.py
+
+```
+
+### 2. Processar os Dados
+
+```bash
+python3 analise.py
+python3 gerar_graficos.py
+
+```
+
+---
+
+## 📈 Resultados em Destaque
+
+### O Confronto: FIFO vs RED (Carga Extrema)
+
+Sob estresse máximo (10 fluxos TCP contra um buffer de 1000 pacotes), a fila FIFO retém pacotes causando uma latência destrutiva, enquanto o RED descarta preventivamente e educa o TCP.
+
+| Métrica | FIFO (Drop-Tail) 🟥 | RED (Inteligente) 🟩 | Melhoria |
+| --- | --- | --- | --- |
+| **Latência (RTT)** | `4354.1 ± 1171.83 ms` | `38.7 ± 4.56 ms` | **112.4x** |
+| **Jitter** | `123.20 ± 38.93 ms` | `9.6 ± 3.96 ms` | **12.8x** |
+| **Retransmissões** | `1236 pacotes` | `45 pacotes` | **-96% perdas** |
+
+*(Para ver os gráficos gerados com o detalhamento das barras de erro e a dinâmica da janela TCP, consulte as imagens e o relatório em PDF disponibilizados nos arquivos do repositório).*
+
+---
+
+## 🏁 Conclusão
+
+A emulação prova que a adição cega de memória em roteadores causa degradação extrema da rede moderna. A parametrização de algoritmos de Active Queue Management (AQM), como o RED, é indispensável para preservar o Quality of Service (QoS) em aplicações sensíveis ao tempo (VoIP, Jogos, Vídeo).
