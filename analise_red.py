@@ -19,7 +19,6 @@ print("-" * 60)
 for b in buffers:
     for c in cargas:
         rtts, jits = [], []
-        # Lendo os dados da maratona nova!
         pasta = f"resultados_red/buffer_{b}_carga_{c}"
         for r in range(1, rep + 1):
             try:
