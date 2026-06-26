@@ -46,4 +46,4 @@ with open(caminho_csv, mode='w', newline='', encoding='utf-8') as arquivo_csv:
             # Escreve a linha com os dados calculados
             escritor.writerow([b, c, m_r, e_r, m_j, e_j])
 
-print(f"✅ SUCESSO! Planilha '{caminho_csv}' gerada com sucesso e pronta para o Excel/Google Sheets.")
+print(f"SUCESSO! Planilha '{caminho_csv}' gerada com sucesso e pronta para o Excel/Google Sheets.")
