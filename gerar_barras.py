@@ -85,4 +85,4 @@ plt.tight_layout()
 plt.savefig('slide_barras_jitter.png', dpi=300)
 plt.close()
 
-print("✅ SUCESSO! As imagens 'slide_barras_rtt.png' e 'slide_barras_jitter.png' foram criadas!")
+print("SUCESSO! As imagens 'slide_barras_rtt.png' e 'slide_barras_jitter.png' foram criadas!")
