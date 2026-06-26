@@ -58,4 +58,4 @@ with open(caminho_csv, mode='w', newline='', encoding='utf-8') as arquivo_csv:
                 
                 escritor.writerow([nome_fila, b, c, rtt, jitter, vazao, rtx])
 
-print(f"✅ SUCESSO! Arquivo '{caminho_csv}' gerado. Importe para o Excel!")
+print(f"SUCESSO! Arquivo '{caminho_csv}' gerado. Importe para o Excel!")
