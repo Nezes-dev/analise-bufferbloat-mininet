@@ -3,7 +3,7 @@ import json, os, numpy as np, scipy.stats as st, matplotlib.pyplot as plt
 
 buffers = [10, 100, 500, 1000]
 rep = 30
-carga = 10 # Vamos focar no cenário de estresse máximo!
+carga = 10 #Focar no cenário de estresse máximo!
 
 def obter_stats(pasta, metrica='rtt'):
     valores = []
@@ -75,4 +75,4 @@ plt.tight_layout()
 plt.savefig('slide_confronto_jitter.png', dpi=300)
 plt.close()
 
-print("✅ SUCESSO! As imagens do confronto final foram geradas!")
+print("SUCESSO! As imagens do confronto final foram geradas!")
