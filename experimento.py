@@ -61,7 +61,7 @@ def rodar():
                     time.sleep(62)
                 
                 net.stop()
-        print(f"\n✅ Buffer {b} concluído.")
+        print(f"\n Buffer {b} concluído.")
 
     print(f"\n🏆 EXPERIMENTO FINALIZADO!")
 
