@@ -10,7 +10,7 @@ import sys
 class BufferbloatTopo(Topo):
     def build(self):
         h1, h2 = self.addHost('h1'), self.addHost('h2')
-        # SOLUÇÃO: Trocamos addHost por addSwitch. 
+        # SOLUÇÃO: Trocar addHost por addSwitch. 
         # Isso resolve 100% da conectividade L2 e permite o tc-netem funcionar.
         r1 = self.addSwitch('r1') 
         self.addLink(h1, r1, bw=1000, linkopts={'params':{'r2q':1}}) 
@@ -63,7 +63,7 @@ def rodar():
                 net.stop()
         print(f"\n Buffer {b} concluído.")
 
-    print(f"\n🏆 EXPERIMENTO FINALIZADO!")
+    print(f"\n EXPERIMENTO FINALIZADO!")
 
 if __name__ == '__main__':
     rodar()
