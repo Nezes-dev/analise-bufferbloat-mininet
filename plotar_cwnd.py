@@ -74,4 +74,4 @@ plt.tight_layout()
 nome_arquivo = "grafico_cwnd_corrigido.png"
 plt.savefig(nome_arquivo, dpi=300)
 
-print(f"✅ SUCESSO! Gráfico salvo como '{nome_arquivo}'.")
+print(f"SUCESSO! Gráfico salvo como '{nome_arquivo}'.")
