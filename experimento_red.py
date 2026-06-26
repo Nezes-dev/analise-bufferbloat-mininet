@@ -69,9 +69,9 @@ def rodar():
                     time.sleep(62)
                 
                 net.stop()
-        print(f"\n✅ Buffer RED {b} concluído.")
+        print(f"\n Buffer RED {b} concluído.")
 
-    print(f"\n🏆 EXPERIMENTO RED FINALIZADO!")
+    print(f"\n EXPERIMENTO RED FINALIZADO!")
 
 if __name__ == '__main__':
     rodar()
