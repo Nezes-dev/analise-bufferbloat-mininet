@@ -21,7 +21,7 @@ def rodar():
     total = len(buffers) * len(cargas) * rep
     cont = 0
 
-    print(f"\n🚀 MARATONA RED INICIADA: Fila Inteligente Ativada\n")
+    print(f"\n MARATONA RED INICIADA: Fila Inteligente Ativada\n")
 
     for b in buffers:
         for c in cargas:
