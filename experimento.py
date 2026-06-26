@@ -21,7 +21,7 @@ def rodar():
     total = len(buffers) * len(cargas) * rep
     cont = 0
 
-    print(f"\n🚀 MARATONA REINICIADA: Conectividade L2 Ativada\n")
+    print(f"\n MARATONA INICIADA: Conectividade L2 Ativada\n")
 
     for b in buffers:
         for c in cargas:
