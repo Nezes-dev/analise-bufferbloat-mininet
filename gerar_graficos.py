@@ -83,4 +83,4 @@ plt.tight_layout()
 plt.savefig('slide_grafico_jitter.png', dpi=300)
 plt.close()
 
-print("✅ SUCESSO! As imagens 'slide_grafico_rtt.png' e 'slide_grafico_jitter.png' foram criadas na pasta atual.")
+print("SUCESSO! As imagens 'slide_grafico_rtt.png' e 'slide_grafico_jitter.png' foram criadas na pasta atual.")
